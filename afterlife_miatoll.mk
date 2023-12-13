@@ -9,12 +9,28 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
 # Inherit from the crdroid configuration.
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+$(call inherit-product, vendor/afterlife/config/common_full_phone.mk)
 
 # Inherit from miatoll device
 $(call inherit-product, device/xiaomi/miatoll/device.mk)
 
-PRODUCT_NAME := lineage_miatoll
+# AfterLife flags
+AFTERLIFE_MAINTAINER := MaheshTechnicals
+
+# Offline Charging
+USE_PIXEL_CHARGING := true
+
+# disable/enable blur support, default is false
+TARGET_SUPPORTS_BLUR := true
+
+#Gapps
+AFTERLIFE_GAPPS := true
+
+#Touch Gesture
+TARGET_SUPPORTS_TOUCHGESTURES := true
+
+
+PRODUCT_NAME := afterlife_miatoll
 PRODUCT_DEVICE := miatoll
 PRODUCT_MANUFACTURER := Xiaomi
 PRODUCT_BRAND := Redmi
