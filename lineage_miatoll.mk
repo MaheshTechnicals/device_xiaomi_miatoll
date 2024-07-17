@@ -12,6 +12,11 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/non_ab_device.mk)
 # Inherit from the crdroid configuration.
 $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
+
+#MIUI CAMERA
+$(call inherit-product-if-exists, vendor/xiaomi/miuicamera/config.mk)
+
+
 # Inherit from miatoll device
 $(call inherit-product, device/xiaomi/miatoll/device.mk)
 
