@@ -10,17 +10,25 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/non_ab_device.mk)
 
 # Inherit from the crdroid configuration.
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+$(call inherit-product, vendor/everest/config/common_full_phone.mk)
 
 
 #MIUI CAMERA
 $(call inherit-product-if-exists, vendor/xiaomi/miuicamera/config.mk)
 
+# everest flags
+EVEREST_MAINTAINER := "Mahesh Technicals"
+TARGET_SUPPORTS_BLUR := true
+TARGET_HAS_UDFPS := true
+EXTRA_UDFPS_ANIMATIONS := true
+WITH_GAPPS := true
+
+
 
 # Inherit from miatoll device
 $(call inherit-product, device/xiaomi/miatoll/device.mk)
 
-PRODUCT_NAME := lineage_miatoll
+PRODUCT_NAME := everest_miatoll
 PRODUCT_DEVICE := miatoll
 PRODUCT_MANUFACTURER := Xiaomi
 PRODUCT_BRAND := Redmi
